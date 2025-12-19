@@ -1,8 +1,12 @@
+import { NotesProvider } from '@/context/NotesContext';
 import { Stack } from 'expo-router';
 
 export default function RootLayout() {
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    
+
+<NotesProvider>
+     <Stack screenOptions={{ headerShown: false }}>
       
       <Stack.Screen name="authentication/Login" />
       <Stack.Screen name="authentication/Register" />
@@ -10,5 +14,7 @@ export default function RootLayout() {
       <Stack.Screen name="(tabs)" options={{ gestureEnabled: false }} />
 
     </Stack>
+    </NotesProvider>
+
   );
 }

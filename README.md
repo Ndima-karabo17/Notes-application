@@ -18,3 +18,12 @@ Login page
 
 
 ![login](https://github.com/user-attachments/assets/31544fe2-3c21-494f-bc61-376e999692da)
+
+
+Profile management
+-
+![update-profile](https://github.com/user-attachments/assets/924cea45-2ca0-4df3-bc28-204ebc9f7bf5)
+
+![saved-update](https://github.com/user-attachments/assets/c7934d8f-3220-4f5a-831f-b3aa9b9f72fd)
+
+![securirty purposes](https://github.com/user-attachments/assets/f7eec66a-50ae-44ab-b3a8-6a5dfd360679)

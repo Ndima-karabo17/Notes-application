@@ -12,30 +12,44 @@ export default function ProfileScreen() {
   const router = useRouter();
 
   const handleUpdateProfile = () => {
-    // 1. Basic Validation
+    // 1. Validation check
     if (!name || !email) {
-      Alert.alert("Error", "Username and Email cannot be empty.");
+      Alert.alert("Error", "Username and Email are required.");
       return;
     }
 
-    // 2. logic to simulate saving data
+    // 2. First Alert: Confirm Success
     Alert.alert(
-      "Profile Updated", 
-      "For security reasons, you must log in again with your new credentials.",
+      "Updated Successfully", 
+      "Your profile information has been saved.",
       [
-        { 
-          text: "OK", 
-          onPress: async () => {
-            try {
-              // 3. Clear session data (if you have tokens saved)
-              // await AsyncStorage.removeItem('user_token'); 
-              
-              // 4. Force Logout immediately
-              router.replace('/authentication/Login');
-            } catch (error) {
-              console.error("Logout failed", error);
-            }
-          } 
+        {
+          text: "Next",
+          onPress: () => {
+            // 3. Second Alert: Security Requirement
+            Alert.alert(
+              "Security Action Required",
+              "For your security, please login again using your updated password.",
+              [
+                {
+                  text: "Go to Login",
+                  onPress: async () => {
+                    // 4. Log the user out
+                    try {
+                      // Clear any saved user session/token here
+                      await AsyncStorage.removeItem('user_session'); 
+                      
+                      // Redirect to login and clear navigation history
+                      router.replace('/authentication/Login');
+                    } catch (e) {
+                      router.replace('/authentication/Login');
+                    }
+                  }
+                }
+              ],
+              { cancelable: false } // Force the user to click the button
+            );
+          }
         }
       ]
     );

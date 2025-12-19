@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, ScrollView, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function ProfileScreen() {
   const [name, setName] = useState('Ndima'); 
@@ -11,8 +12,33 @@ export default function ProfileScreen() {
   const router = useRouter();
 
   const handleUpdateProfile = () => {
- 
-    Alert.alert("Success", "Your profile credentials have been updated.");
+    // 1. Basic Validation
+    if (!name || !email) {
+      Alert.alert("Error", "Username and Email cannot be empty.");
+      return;
+    }
+
+    // 2. logic to simulate saving data
+    Alert.alert(
+      "Profile Updated", 
+      "For security reasons, you must log in again with your new credentials.",
+      [
+        { 
+          text: "OK", 
+          onPress: async () => {
+            try {
+              // 3. Clear session data (if you have tokens saved)
+              // await AsyncStorage.removeItem('user_token'); 
+              
+              // 4. Force Logout immediately
+              router.replace('/authentication/Login');
+            } catch (error) {
+              console.error("Logout failed", error);
+            }
+          } 
+        }
+      ]
+    );
   };
 
   return (

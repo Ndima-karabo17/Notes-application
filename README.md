@@ -2,7 +2,7 @@
 
 
 Creating a secure note taking application that has categories (eg work, study, personal) with the different categories being viewable on different pages. Add CRUD functionality to be able to manage the notes on the application. You can use async storage as a database.
--
+
 
 User Management
 -

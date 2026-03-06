@@ -20,7 +20,7 @@ export default function LoginScreen() {
       if (userData) {
         const user = JSON.parse(userData);
         if (email.toLowerCase() === user.email.toLowerCase() && password === user.password) {
-          router.replace('/');
+          router.replace('/AddNote');
         } else {
           Alert.alert('Login Failed', 'The email or password you entered is incorrect.');
         }

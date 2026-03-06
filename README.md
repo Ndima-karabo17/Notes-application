@@ -1,47 +1,50 @@
-##  React Native Notes Application
+# Welcome to your Expo app 👋
 
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-Creating a secure note taking application that has categories (eg work, study, personal) with the different categories being viewable on different pages. Add CRUD functionality to be able to manage the notes on the application. You can use async storage as a database.
+## Get started
 
-How to run the project
--
-1. Prerequisites
+1. Install dependencies
 
-Node.js (v18 or newer recommended)
-npm or yarn
+   ```bash
+   npm install
+   ```
 
-Expo Go app installed on your physical device (recommended for audio testing) OR an Emulator (Android Studio/Xcode).
+2. Start the app
 
-2. Steps to follow
+   ```bash
+   npx expo start
+   ```
 
-i) Clone repository. (https://github.com/Ndima-karabo17/Notes-application.git)
+In the output, you'll find options to open the app in a
 
-ii) cd Audio-Recorder or make sure you are inside Audio-Recorder in your terminal
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-iii) npm install
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-iv) npx expo start then scan the QR code using your Expo go app in your android phone
+## Get a fresh project
 
-User Management
--
-Authentication
+When you're ready, run:
 
-Register page
--
+```bash
+npm run reset-project
+```
 
-![register](https://github.com/user-attachments/assets/e46356cd-7144-4e42-bd02-15b63565852e)
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
-Login page
--
+## Learn more
 
+To learn more about developing your project with Expo, look at the following resources:
 
-![login](https://github.com/user-attachments/assets/31544fe2-3c21-494f-bc61-376e999692da)
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
+## Join the community
 
-Profile management
--
-![update-profile](https://github.com/user-attachments/assets/924cea45-2ca0-4df3-bc28-204ebc9f7bf5)
+Join our community of developers creating universal apps.
 
-![saved-update](https://github.com/user-attachments/assets/c7934d8f-3220-4f5a-831f-b3aa9b9f72fd)
-
-![securirty purposes](https://github.com/user-attachments/assets/f7eec66a-50ae-44ab-b3a8-6a5dfd360679)
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.

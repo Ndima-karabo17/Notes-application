@@ -77,7 +77,7 @@ export default function AddNoteScreen() {
       }
 
       await AsyncStorage.setItem('user_notes', JSON.stringify(notes));
-      router.back();
+      router.replace('/');
     } catch (error) {
       Alert.alert('Error', 'Failed to save the note.');
     }

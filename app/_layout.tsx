@@ -15,7 +15,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     checkAuth();
-  }, []);
+  }, [segments]);
 
   useEffect(() => {
     if (isLoggedIn === null) return;
@@ -25,7 +25,7 @@ export default function RootLayout() {
     if (!isLoggedIn && !inAuth) {
       router.replace('/authentication/Login');
     } else if (isLoggedIn && inAuth) {
-      router.replace('/');
+      router.replace('/AddNote');  // ← redirect here after login
     }
   }, [isLoggedIn, segments]);
 

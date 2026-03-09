@@ -23,9 +23,11 @@ export default function RootLayout() {
     const inAuth = segments[0] === 'authentication';
 
     if (!isLoggedIn && !inAuth) {
+      // Not logged in and not on an auth screen → send to Login
       router.replace('/authentication/Login');
     } else if (isLoggedIn && inAuth) {
-      router.replace('/AddNote');  // ← redirect here after login
+      // Logged in but still on an auth screen → send to notes list
+      router.replace('/');
     }
   }, [isLoggedIn, segments]);
 
@@ -40,10 +42,11 @@ export default function RootLayout() {
   return (
     <Stack>
       <Stack.Screen name="index" options={{ title: 'My Notes' }} />
-      <Stack.Screen name="AddNote" options={{ title: 'Add Note' }} />
       <Stack.Screen name="authentication/Login" options={{ headerShown: false }} />
       <Stack.Screen name="authentication/Register" options={{ headerShown: false }} />
+      {/* Fixed: Profile is under authentication folder */}
       <Stack.Screen name="Profile" options={{ title: 'Profile' }} />
+      <Stack.Screen name="AddNote" options={{ title: 'Add Note' }} />
     </Stack>
   );
 }

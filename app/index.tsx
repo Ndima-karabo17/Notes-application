@@ -41,12 +41,8 @@ export default function HomeScreen() {
   const loadNotes = async () => {
     try {
       const savedNotes = await AsyncStorage.getItem('user_notes');
-      if (savedNotes) {
-        setNotes(JSON.parse(savedNotes));
-      } else {
-        setNotes([]);
-      }
-    } catch (error) {
+      setNotes(savedNotes ? JSON.parse(savedNotes) : []);
+    } catch {
       Alert.alert('Error', 'Failed to load notes.');
     }
   };
@@ -117,7 +113,8 @@ export default function HomeScreen() {
         )}
       />
 
-      <TouchableOpacity style={styles.fab} onPress={() => router.push('/Profile')}>
+      {/* Fixed: was navigating to /Profile, now correctly goes to /AddNote */}
+      <TouchableOpacity style={styles.fab} onPress={() => router.push('/AddNote')}>
         <Ionicons name="add" size={30} color="#000" />
       </TouchableOpacity>
     </View>
